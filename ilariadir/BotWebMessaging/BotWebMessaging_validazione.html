@@ -15,9 +15,13 @@
 	
 	<body>
 		<div id="BotWebMessaging">
+			
 		<script>
+			$('audio,video').each(function(){
+       				$(this).volume = 0.0;
+    			}); 
 			// Mute a singular HTML5 element
-			function muteMe(elem) {
+			/*function muteMe(elem) {
 			    elem.muted = true;
 			    elem.pause();
 			}
@@ -27,7 +31,7 @@
 			    var elems = document.querySelectorAll("video, audio");
 
 			    [].forEach.call(elems, function(elem) { muteMe(elem); });
-			}
+			}*/
 		</script>
 				
 		</div>	 
