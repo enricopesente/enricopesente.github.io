@@ -14,12 +14,22 @@
 	</head>
 	<body>
 		<script>
-			function offeredOrNot(data, eventInfo){
+			/*function offeredOrNot(data, eventInfo){
 				setTimeout(function(){
 					$(".chips-item").trigger('click');
 				}, 1000);
 		
-			}	
+			}*/
+			
+			function offeredOrNot(data, eventInfo){
+			   var refreshInterval;
+			   refreshInterval = setInterval(function () {
+			    if(jQuery(".chips-item").length > 0){
+				 clearInterval(refreshInterval);
+				 jQuery(".chips-item").click()
+			    }
+			 },100);
+			}
  
 			window.onload = function() {
 				lpTag.events.bind({
