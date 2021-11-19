@@ -14,72 +14,56 @@
 	</head>
 	
 	<style>
-		body, html {
-		  height: 100%;
-		  margin: 0;
-		}
+            /* LIVEPERSON CHAT RESTYLING */
+            #lpChat .lp-json-pollock-layout {
+                background: #E2E2E2;
+                border: none;
+                padding-bottom: 4px;
+            }
 
-		.bg {
-		  /* The image used */
-		  background-image: url("sfondo.PNG");
+            #lpChat .lp-json-pollock-layout-carousel .lp-json-pollock-layout:first-child {
+                border-top-left-radius: 12px;
+                border-bottom-left-radius: 12px;
+            }
 
-		  /* Full height */
-		  height: 100%; 
+            #lpChat .lp-json-pollock-layout-carousel .lp-json-pollock-layout:last-child {
+                border-top-right-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
 
-		  /* Center and scale the image nicely */
-		  background-position: center;
-		  background-repeat: no-repeat;
-		  background-size: cover;
-		}
-		
-		.bottomRight {
-		  position: absolute;
-		  bottom: 0;
-		  right: 0;
-		}
-		
-		.lp-json-pollock-layout
-                                {
-                                    background: #e5e3e0 !important;
-                                                border-radius:15px !important;
-                                                border:none !important;
-                                }
-                                .lp-json-pollock-layout{
-						border:none !important;
-						padding-bottom:5px !important;
-				}
+            #lpChat .lp-json-pollock-element-text span { 
+                font-weight: bold;
+            }
 
-				.lp-json-pollock-element-text span{
-						font-weight:bold !important;
+            #lpChat .lp-json-pollock-element-button {
+                text-align: center;
+                border: none;
+            }
 
-				}
-				.lpc_card__text{
-						text-align:center !important;
-				}
-                                .lp-json-pollock-element-button{
-                                                text-align:center !important;
-                                                border:none !important;
-                                }
-                                .lp-json-pollock-element-text{
-                                                margin-top:5px !important;
-                                                border:none !important;
-                                }
-                                .lp-json-pollock-element-button button{
-                                                margin-top:5px !important;
-                                                color:#00aed4 !important;
-                                                border: 1px solid white !important;
-                                                border-radius: 15px !important;
-                                                margin-bottom: 2px !important;
-                                                background-color: white !important;
-                                                width:90% !important;
-                                }
-                                .lp-json-pollock-element-image img{
-                                                border-top-left-radius:15px;
-                                                border-top-right-radius:15px;
-                                }
+            #lpChat .lp-json-pollock-element-text {
+                margin: 5px 0;
+                border: none;
+            }
 
-		
-	</style>
+            #lpChat .lp-json-pollock-element-button button {
+                margin-top: 5px;
+                color: #00c5df;
+                border: 1px solid #fff;
+                border-radius: 10px;
+                margin-bottom: 2px;
+                background-color: #fff;
+                width: 90%;
+            }
+
+            #lpChat .lp-json-pollock-layout-carousel > .lp-json-pollock-layout:first-child .lp-json-pollock-element-image img {
+                border-top-left-radius: 12px;
+            }
+
+            #lpChat .lp-json-pollock-layout-carousel > .lp-json-pollock-layout:last-child .lp-json-pollock-element-image img {
+                border-top-right-radius: 12px;
+            }
+        </style>
+
 	
 	<body>
 		
