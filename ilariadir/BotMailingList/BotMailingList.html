@@ -16,14 +16,51 @@
 		<title>BOT MAILING LIST - TEST</title>
 	</head>
 	
+	<style>
+		body {font-family: Arial, Helvetica, sans-serif;}
+
+		form {
+		  border: 3px solid #f1f1f1;
+		  font-family: Arial;
+		}
+
+		.container {
+		  padding: 20px;
+		  background-color: #f1f1f1;
+		}
+
+		input[type=text], input[type=submit] {
+		  width: 100%;
+		  padding: 12px;
+		  margin: 8px 0;
+		  display: inline-block;
+		  border: 1px solid #ccc;
+		  box-sizing: border-box;
+		}
+
+		input[type=checkbox] {
+		  margin-top: 16px;
+		}
+
+		input[type=submit] {
+		  background-color: #04AA6D;
+		  color: white;
+		  border: none;
+		}
+
+		input[type=submit]:hover {
+		  opacity: 0.8;
+		}
+		</style>
+	
 	<body>
 		<script>
-			function setVisitorInfo(email) {
+			function setVisitorInfo(email, name) {
 			    lpTag.sdes.push(
 				  {
 				    "type": "personal",
 				    "personal": {
-					"firstname": "John", // FIRST NAME
+					"firstname": name, // FIRST NAME
 					"lastname": "Doe", // SURNAME
 					"age": {
 					    "age": 34, // AGE AS INTEGER
@@ -44,16 +81,42 @@
 					"company": "company" // VISITOR COMPANY NAME
 				    }
 				  }
-				);
+			  );
+			  lpTag.sdes.push(
+				{
+				    "type": "prodView", //MANDATORY
+				    "currency": "EUR", //CURRENCY CODE
+				    "products": [{ //ARRAY OF PRODUCTS
+					"product": {
+					    "name": "steppy", //PRODUCT NAME
+					    "category": "xxx", //PRODUCT CATEGORY NAME
+					    "sku": "xyz567", //PRODUCT SKU OR UNIQUE IDENTIFIER
+					    "price": 77.8, //SINGLE PRODUCT PRICE
+					    "statusInStock": "low",  //PRODUCT STATUS IN STOCK
+					    "quantityInStock": 7  //AVAILABLE QUANTITY IN STOCK
+					}
+				    }]
+				}
+			  );
 			};		
 		</script>
+
+		<!--<label for="lname">Indirizzo mail:</label>-->
+		<!--<input type="email" id="email" name="email">-->
 		
-		<label for="lname">Indirizzo mail:</label>
-		<input type="email" id="email" name="email">
-		
-		
-		<div id="BotMailingList" onclick="setVisitorInfo(document.getElementById('email').value)"></div>
-		
+		<div class="container">
+		    <h2>Steppy newsletter</h2>
+		    <p>Lorem ipsum text about why you should subscribe to our newsletter blabla. Lorem ipsum text about why you should subscribe to our newsletter blabla.</p>
+		</div>
+
+		<div class="container" style="background-color:white">
+		    <input type="text" id="name" placeholder="Name" name="name" required>
+		    <input type="email" id="email" placeholder="Email address" name="email" required>
+		</div>
+
+		<div class="container">
+		    <div id="BotMailingList" onclick="setVisitorInfo(document.getElementById('email', 'name').value)"></div>
+		</div>
 		
 	</body>  
 </html>
