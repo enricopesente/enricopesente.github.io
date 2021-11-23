@@ -17,9 +17,8 @@
 	</head>
 	
 	<body>
-		<scritp>
-			$(function () {
-			  $("#BotMailingList").click(function () {
+		<script>
+			function setVisitorInfo(email) {
 			    lpTag.sdes.push(
 				  {
 				    "type": "personal",
@@ -33,7 +32,7 @@
 					    "day": 15 // BIRTH DAY
 					  },
 					"contacts": [{
-					  "email": "myname@example.com", // EMAIL
+					  "email": email, // EMAIL
 					  "phone": "+1 212-788-8877", // PHONE NUMBER
 					  "address": {
 					    "country": "Russia", // COUNTRY
@@ -55,7 +54,7 @@
 		<input type="email" id="email" name="email" value="default@value.com">
 		
 		
-		<div id="BotMailingList"></div>
+		<div id="BotMailingList" onclick="setVisitorInfo(document.getElementById('email').value)"></div>
 		
 		
 	</body>  
