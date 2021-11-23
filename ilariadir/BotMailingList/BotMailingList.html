@@ -96,7 +96,27 @@
 				    }]
 				}
 			  );
-			};		
+			};
+			
+			function offeredOrNot(data, eventInfo){
+				setTimeout(function(){
+					$(".chips-item").trigger('click');
+				}, 1000);
+		
+			}	
+ 
+			window.onload = function() {
+
+
+				lpTag.events.bind({
+					eventName : "OFFER_CLICK",
+					appName : "lp_monitoringSDK",
+					func: offeredOrNot,
+					triggerOnce : true
+				});
+
+
+			}
 		</script>
 
 		<!--<label for="lname">Indirizzo mail:</label>-->
