@@ -14,6 +14,21 @@
 		<title>BOT ATTIVA CARTA - TEST</title>
 	</head>
 	
+	<script>
+		lpTag.sdes = lpTag.sdes||[];
+		lpTag.sdes.push(
+		   {
+			"type": "mrktInfo",  //MANDATORY
+			    "info": {
+			    "channel": "3",  //ORIGINATING CHANNEL ENUM:
+			     // 0-Direct, 1-Search, 2-Social, 3-Email, 4-Referral, 5-Paid Search, 6-Display
+			    "affiliate": "",  //AFFILIATE NAME
+			    "campaignId": "Attiva carta"  //EXTERNAL ORIGINATING CAMPAIGN 
+			}
+		   }
+		);
+	</script>
+	
 	<style>	
 		.bottomRight {
 		  position: absolute;
