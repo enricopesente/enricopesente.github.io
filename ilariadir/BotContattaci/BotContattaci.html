@@ -48,11 +48,26 @@
 		function clicca(){
 			document.querySelector('.imgBotContattaci').click();
 		}
+		
+		function setVisitorInfo() {
+			    lpTag.sdes.push(
+				  {
+  					"type": "service", //MANDATORY
+  					"service": {
+    						"topic": "recupera password", // SERVICE ACTIVITY TOPIC OR NAME
+    						"status": 1, // STATUS ENUM 1-In Progress
+    						"category": "recupero credenziali", // SERVICE CATEGORY NAME
+    						"serviceId": "1" // SERVICE UNIQUE IDENTIFIER OR TICKET ID
+					 }
+				  }
+			  );
+			  
+		};
 	</script>
 	
 	<body onload="clickButton()">
 		<div>
-			<div id="BotContattaci"></div>
+			<div id="BotContattaci" onclick="setVisitorInfo()></div>
 		</div>
 	</body>  
 </html>
