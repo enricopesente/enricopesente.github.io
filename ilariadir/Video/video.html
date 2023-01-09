@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>Video Text Overlay Demo</title>
+	</head>
+
+	<style>
+		video {
+			width: 250px;
+		}
+
+		video::cue {
+		  background-image: linear-gradient(to bottom, dimgray, lightgray);
+		  color: papayawhip;
+		}
+
+		video::cue(b) {
+		  color: peachpuff;
+		}
+	</style>
+	
+	<body>
+		<video controls src="https://www.buddybank.com/bb-assets/video/Buddy_Video_Logo_2017.mp4">
+			<track default kind="captions" srclang="it" src="https://enricopesente.github.io/ilariadir/Video/track.vtt">
+		</video>
+
+	</body>
+
+</html>
