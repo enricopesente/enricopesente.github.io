@@ -37,7 +37,7 @@
 			<track default kind="captions" srclang="it" src="https://enricopesente.github.io/ilariadir/Video/track.vtt">
 		</video>
 		
-		<a id="prestiti" onclick="openApp()">Prestiti</button>
+		<a id="prestiti" onclick="openApp()">Prestiti</a>
 		
 		<script type="text/javascript">
 			var video = document.getElementById("myvideo");
@@ -45,7 +45,7 @@
 
 			video.addEventListener("timeupdate", function(){
 			    if(this.currentTime >= 5) {
-				button.style = "display: block";
+				prestiti.style = "display: block";
 			    }
 			});
 
