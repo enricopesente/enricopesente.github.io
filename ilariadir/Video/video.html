@@ -33,48 +33,34 @@
 	</style>
 		
 	<body>
-		
+		<div id="video-container">
 			<video id="myvideo" controls src="https://www.buddybank.com/bb-assets/video/Buddy_Video_Logo_2017.mp4">
 				<track default kind="captions" srclang="it" src="https://enricopesente.github.io/ilariadir/Video/track.vtt">
 			</video>
-
-			<a id="prestiti" onclick="openApp()">Prestiti</a>
+			<p id="video-text"></p>
+		</div>
+		<!--<a id="prestiti" onclick="openApp()">Prestiti</a>-->
 		
-			<script type="text/javascript">
-				var video = document.getElementById("myvideo");
-				var prestiti = document.getElementById("prestiti");
+		<script type="text/javascript">
+			var video = document.getElementById("myvideo");
+			var videoText = document.getElementById("video-text");
+			//var prestiti = document.getElementById("prestiti");
 
-				video.addEventListener("timeupdate", function(){
-				    if(this.currentTime >= 5) {
-					prestiti.style = "display: block";
-				    }
-				});
+			video.addEventListener("timeupdate", function(){
+			    if(this.currentTime >= 5) {
+				videoText.innerHTML = 'TESTOOO';	
+				    //prestiti.style = "display: block";
+			    }
+			    
+			    setTimeout(function() {
+				videoText.innerHTML = '';
+			    }, 5000);
+			});
 
-				function openApp(){
-					prestiti.setAttribute('href', 'buddybank-mobile-app://openLoans');
-				}	
-			</script>
-		<!--
-		
-		<video id="myVideo" ontimeupdate="checkTime()">
-			<source src="https://www.buddybank.com/bb-assets/video/Buddy_Video_Logo_2017.mp4" type="video/mp4">
-		</video>
-
-
-
-		<div id="overlay"></div>
-
-
-
-		<script>
-		  function checkTime() {
-		    var video = document.getElementById("myVideo");
-		    if (video.currentTime >= 120) { //2 minuti
-		      document.getElementById("overlay").innerHTML = "La tua stringa sovraimpressa";
-		    }
-		  }
+			function openApp(){
+				prestiti.setAttribute('href', 'buddybank-mobile-app://openLoans');
+			}	
 		</script>
-		-->
 		
 	</body>
 
