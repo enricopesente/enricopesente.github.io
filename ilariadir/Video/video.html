@@ -34,32 +34,40 @@
 		
 	<body>
 		<div id="video-container">
-			<video id="myvideo" controls src="https://www.buddybank.com/bb-assets/video/Buddy_Video_Logo_2017.mp4">
-				<track default kind="captions" srclang="it" src="https://enricopesente.github.io/ilariadir/Video/track.vtt">
+			<video id="myvideo" controls autoplay loop>
+				<source src="https://www.buddybank.com/bb-assets/video/Buddy_Video_Logo_2017.mp4" type="video/mp4">
+				<!--<track default kind="captions" srclang="it" src="https://enricopesente.github.io/ilariadir/Video/track.vtt">-->
 			</video>
-			<p id="video-text"></p>
+			<div id="prestiti">
+				<button class="buttonPrestiti" role="button">Prestiti</button>
+			</div>
 		</div>
 		<!--<a id="prestiti" onclick="openApp()">Prestiti</a>-->
 		
 		<script type="text/javascript">
-			var video = document.getElementById("myvideo");
-			var videoText = document.getElementById("video-text");
+			const video = document.querySelector("video");
+			const source = document.querySelector("source");
+			//var video = document.getElementById("myvideo");
+			//var videoText = document.getElementById("video-text");
 			//var prestiti = document.getElementById("prestiti");
-
+			
+			video.appendChild(source)
+			video.play()
+			
+			const prestiti = document.getElementById("prestiti");
+			
+			prestiti.addEventListener("click", function(){
+			   window.open("https://www.buddybank.com/prestito/", "_blank");  
+			}) 
+			
 			video.addEventListener("timeupdate", function(){
 			    if(this.currentTime >= 5) {
-				videoText.innerHTML = 'TESTOOO';	
+				buttonPrestiti.style = "display: block";	
 				    //prestiti.style = "display: block";
 			    }
-			    
-			    setTimeout(function() {
-				videoText.innerHTML = '';
-			    }, 5000);
 			});
 
-			function openApp(){
-				prestiti.setAttribute('href', 'buddybank-mobile-app://openLoans');
-			}	
+			//prestiti.setAttribute('href', 'buddybank-mobile-app://openLoans');
 		</script>
 		
 	</body>
