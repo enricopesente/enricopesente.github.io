@@ -52,6 +52,23 @@
                         clearInterval(checkExist);
                     }
                 }, 800);
+                
+                const urlParams = new URLSearchParams(window.location.search);
+				const customerId = urlParams.get('customerId');
+				const surveyId = urlParams.get('surveyId');
+				console.log("customerId -> " + customerId + " - surveyId: " + surveyId);
+				
+				lpTag.sdes.push(
+				{  
+				  "type": "lead",
+				  "lead": 
+					{
+						"topic": "",
+						"value": surveyId,
+						"currency": "",
+						"leadId": customerId
+					}
+				});
             });
         </script>
     </body>
