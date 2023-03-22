@@ -1,10 +1,11 @@
 < !DOCTYPE html>
-<html style="height: 100%">
+    <html style="height: 100%">
 
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="robots" content="noindex, nofollow" />
-        <link rel="shortcut icon" href="https://www.buddybank.com/vs-cms/theme/assets/img/favicon.png" type="image/vnd.microsoft.icon" />
+        <link rel="shortcut icon" href="https://www.buddybank.com/vs-cms/theme/assets/img/favicon.png"
+            type="image/vnd.microsoft.icon" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <!-- BEGIN LivePerson Monitor. -->
         <script
@@ -15,6 +16,84 @@
 
         <title>buddybank - raccolta preferenze clienti</title>
 
+        <style>
+            /* LIVEPERSON CHAT RESTYLING */
+            #lpChat .lp-json-pollock-layout {
+                background: #e2e2e2;
+                border: none;
+                padding-bottom: 4px;
+            }
+
+            #lpChat .lp-json-pollock-layout-carousel .lp-json-pollock-layout:first-child {
+                border-top-left-radius: 12px;
+                border-bottom-left-radius: 12px;
+            }
+
+            #lpChat .lp-json-pollock-layout-carousel .lp-json-pollock-layout:last-child {
+                border-top-right-radius: 12px;
+                border-bottom-right-radius: 12px;
+            }
+
+            #lpChat .lp-json-pollock-element-text span {
+                font-weight: bold;
+            }
+
+            #lpChat .lp-json-pollock-element-button {
+                text-align: center;
+                border: none;
+            }
+
+            #lpChat .lp-json-pollock-element-text {
+                margin: 5px 0;
+                border: none;
+            }
+
+            #lpChat .lp-json-pollock-element-button button {
+                margin-top: 5px;
+                color: #00c5df;
+                border: 1px solid #fff;
+                border-radius: 10px;
+                margin-bottom: 2px;
+                background-color: #fff;
+                width: 90%;
+            }
+
+            #lpChat .lp-json-pollock-layout-carousel>.lp-json-pollock-layout:first-child .lp-json-pollock-element-image img {
+                border-top-left-radius: 12px;
+            }
+
+            #lpChat .lp-json-pollock-layout-carousel>.lp-json-pollock-layout:last-child .lp-json-pollock-element-image img {
+                border-top-right-radius: 12px;
+            }
+
+            #lpChat .lp_header.lpc_maximized-header.lpc_desktop,
+            #lpChat .lp_header.lpc_maximized-header.lpc_mobile {
+                display: none;
+            }
+
+            .lp_desktop #lpChat.lp-window-root>.lp_maximized>.lp_main {
+                top: 0;
+            }
+
+            #lpChat .lp_bottom_area.lp_attachment_icon,
+            .lp_mobile #lpChat.lp-window-root>.lp_maximized>.lp_main,
+            .lp_tablet #lpChat.lp-window-root>.lp_maximized>.lp_main,
+            #LP_ChatViewController_1 {
+                outline: none !important;
+                border-top-color: #fff !important;
+            }
+
+            #lpChat .lp_location_bottom.lpc_composer.lpc_composer_maximized.lpc_desktop,
+            #lpChat .lp_location_bottom.lpc_composer.lpc_composer_maximized.lpc_mobile {
+                border-top: none !important;
+            }
+
+            .lp_mobile #lpChat.lp-window-root>.lp_maximized>.lp_main,
+            .lp_tablet #lpChat.lp-window-root>.lp_maximized>.lp_main {
+                height: 100%;
+                max-height: 100%;
+            }
+        </style>
     </head>
 
     <body style="
@@ -52,24 +131,24 @@
                         clearInterval(checkExist);
                     }
                 }, 800);
-                
-                const urlParams = new URLSearchParams(window.location.search);
-		const customerId = urlParams.get('customerId');
-		const surveyId = urlParams.get('surveyId');
 
-		lpTag.sdes.push(
-		{  
-		  "type": "lead",
-		  "lead": 
-			{
-				"topic": "",
-				"value": surveyId,
-				"currency": "",
-				"leadId": customerId
-			}
-		});
+                const urlParams = new URLSearchParams(window.location.search);
+                const customerId = urlParams.get('customerId');
+                const surveyId = urlParams.get('surveyId');
+
+                lpTag.sdes.push(
+                    {
+                        "type": "lead",
+                        "lead":
+                        {
+                            "topic": "",
+                            "value": surveyId,
+                            "currency": "",
+                            "leadId": customerId
+                        }
+                    });
             });
         </script>
     </body>
 
-</html>
+    </html>
